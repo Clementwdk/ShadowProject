@@ -11,7 +11,30 @@ let deviceCache = null;
 let characteristicCache = null;
 // Intermediate buffer for incoming data
 let readBuffer = '';
-
+// Menu buttons
+let comboB = document.getElementById('comboButton');
+let fastB = document.getElementById('fastButton');
+let workoutB = document.getElementById('workoutButton');
+// Menu Content
+let comboM = document.getElementById('comboM');
+let fastM = document.getElementById('fastM');
+let workoutM = document.getElementById('workoutM');
+// MEnu event
+comboB.addEventListener('click', function() {
+  comboM.hidden =false;
+  fastM.hidden =true;
+  workoutM.hidden =true;
+});
+fastB.addEventListener('click', function() {
+  comboM.hidden =true;
+  fastM.hidden =false;
+  workoutM.hidden =true;
+});
+workoutB.addEventListener('click', function() {
+  comboM.hidden =true;
+  fastM.hidden =true;
+  workoutM.hidden =false;
+});
 // Connect to the device on Connect button click
 connectButton.addEventListener('click', function() {
   connect();
