@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="styles.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
@@ -12,21 +12,24 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <script src="companion.js" data-service-worker="sw.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div id="fullPage">
+        <div id="connectBand">
+            <button value="true" id="connect" type="button"> <i class="fab fa-bluetooth-b"></i> </button>        
+            <button id="disconnect" type="button" hidden=true><i class="fab fa-bluetooth-b"> </i></button>
+            <img id="logo" src="image/logoNoBg.png" alt="Girl in a jacket">
+            <i id="device"> Not connected</i>
+        </div>
+        <!-- <div id="terminal"> </div> -->
 
-<button id="connect" type="button">Connect</button>
-
-<button id="disconnect" type="button">Disconnect</button>
-
-<div id="terminal"></div>
-
-<form id="send-form">
-    <input id="input" type="text">
-    <button type="submit">Send</button>
-</form>
-
-<script src="main.js"></script>
+        <!-- <form id="send-form">
+            <input id="input" type="text">
+            <button type="submit">Send</button>
+        </form> -->
+    </div>
+    <script src="main.js"></script>
 
 </body>
 </html>

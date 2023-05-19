@@ -4,6 +4,7 @@ let disconnectButton = document.getElementById('disconnect');
 let terminalContainer = document.getElementById('terminal');
 let sendForm = document.getElementById('send-form');
 let inputField = document.getElementById('input');
+let deviceName = document.getElementById('device');
 // Selected device object cache
 let deviceCache = null;
 // Characteristic object cache
@@ -48,6 +49,10 @@ function disconnect() {
     if (deviceCache.gatt.connected) {
       deviceCache.gatt.disconnect();
       log('"' + deviceCache.name + '" bluetooth device disconnected');
+      disconnectButton.hidden = true;
+      connectButton.hidden = false;
+      connectButton.style.color = "blue";
+      document.getElementById("device").innerHTML = "Not connected";
     }
     else {
       log('"' + deviceCache.name +
@@ -130,17 +135,18 @@ function requestBluetoothDevice() {
 
             deviceCache.addEventListener('gattserverdisconnected',
             handleDisconnection);
-            
+            document.getElementById("device").innerHTML = "Connected to " +device.name;
+            disconnectButton.hidden =false;
+            connectButton.hidden =true;
+            disconnectButton.style.color = "red";
             return deviceCache;
         });
   }
 
 function handleDisconnection(event) {
   let device = event.target;
-
   log('"' + device.name +
       '" bluetooth device disconnected, trying to reconnect...');
-
   connectDeviceAndCacheCharacteristic(device).
       then(characteristic => startNotifications(characteristic)).
       catch(error => log(error));

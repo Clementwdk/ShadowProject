@@ -1,3 +1,62 @@
+/* Common */
+body{
+    background-color: black;
+    color: white;
+    margin:0px;
+    width:100vw;
+    height:100vh;
+    overflow:auto;
+}
+
+/* COnnect band  */
+#connectBand{
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, 6.5rem);
+    justify-content: center;
+
+    /* border-bottom: solid rgb(255, 255, 255);
+    border-width: 1px; */
+    margin-bottom: 1rem;    
+    height: 2.5rem;
+    /* margin-top: 1rem; */
+}
+
+#logo {
+    width: 7rem;
+    height: 7rem;
+}
+#connectBand button{
+    margin-top: 01.2rem;
+    margin-left: 1rem;
+    border-radius: 10px;
+    height: 2rem ;
+    /* padding: 0rem 1rem 0rem 1rem; */
+    width: 40%;
+    background-color: white;
+    box-shadow: 0px 5px 10px 0px rgb(255, 255, 255, 0.4);            
+    border:none;
+    margin-bottom: 1rem;
+}
+
+#connect{
+    color:blue;
+}
+
+#device{
+    text-align: right;
+    width: 100%;
+    /* padding-right: 1rem; */
+    padding-top: 0.5rem;
+    font-family: system-ui;
+    font-style: normal;
+    font-weight: normal;
+    font-size: x-small;
+    margin-top: 1rem;
+}
+
+
+/* Terminal */
 
 #terminal div {
     color: gray;
