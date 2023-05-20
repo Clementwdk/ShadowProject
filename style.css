@@ -64,7 +64,7 @@ body{
 #menu{
     margin-top: 9rem;
     display: grid;
-    gap:1.5rem;
+    gap:1rem;
 
 }
 
@@ -100,12 +100,10 @@ body{
 }
 /* Form */
 .form {
-    margin-left: 2rem;
     background-color: #15172b;
     border-radius: 20px;
-    box-sizing: border-box;
     padding: 20px;
-    width: 320px;
+    margin: 0 1rem 0 1rem
   }
 
 /* Select Box */
