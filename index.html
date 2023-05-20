@@ -25,15 +25,32 @@
 
         <div id="menu"> 
             <button id="comboButton" class="tabMenu"><i class="fas fa-chess-knight"></i>Combo Mode<i style="color:black" >11</i></button>
-            <div id="comboM" hidden=true>
-                sfsemlfkeqmlfkmelfkmlwfkemwlfkwmel
+            <div class="form" id="comboM" hidden=true>
+                <div class="select-dropdown">
+                    <select>
+                      <option value=[1,2]>Jab, Cross</option>
+                      <option value=[1,1,2]>Jab, Jab, Cross</option>
+                      <option value=[1,2,3]>Jab, Cross, Left Hook</option>
+                    </select>
+                </div>
+                <div class="input-container ic1">
+                    <input id="rndTime" class="input" type="number" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="rndTime" class="placeholder">Round Duration</label>
+                </div>
+                <div class="input-container ic1">
+                    <input id="rndNb" class="input" type="number" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="rndNb" class="placeholder">Roud Number </label>
+                </div>
+                <button class="submit" type="submit">IT'S TIIIME !!</button>
             </div>
             <button id="fastButton" class="tabMenu"><i class="fas fa-tachometer-alt"></i>Fast Mode<i style="color:black" >1111</i></button>
-            <div id="fastM" hidden=true>
+            <div class="form" id="fastM" hidden=true>
                 sfsemlfkeqmlfkmelfkmlwfkemwlfkwmel
             </div>
             <button id="workoutButton"class="tabMenu"><i class="fas fa-dumbbell"></i> Workout Mode</button>
-            <div id="workoutM" hidden=true>
+            <div class="form" id="workoutM" hidden=true>
                 sfsemlfkeqmlfkmelfkmlwfkemwlfkwmel
             </div>
         </div>
