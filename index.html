@@ -27,10 +27,10 @@
             <button id="comboButton" class="tabMenu"><i class="fas fa-chess-knight"></i>Combo Mode<i style="color:black" >11</i></button>
             <div class="form" id="comboM" hidden=true>
                 <div class="select-dropdown">
-                    <select>
-                      <option value=[1,2]>Jab, Cross</option>
-                      <option value=[1,1,2]>Jab, Jab, Cross</option>
-                      <option value=[1,2,3]>Jab, Cross, Left Hook</option>
+                    <select id="comboValue">
+                      <option value="23">Jab, Cross</option>
+                      <option value="223">Jab, Jab, Cross</option>
+                      <option value="234">Jab, Cross, Left Hook</option>
                     </select>
                 </div>
                 <div class="input-container ic1">
@@ -43,7 +43,7 @@
                     <div class="cut"></div>
                     <label for="rndNb" class="placeholder">Roud Number </label>
                 </div>
-                <button class="submit" type="submit">IT'S TIIIME !!</button>
+                <button id="goCombo" class="submit" type="click">IT'S TIIIME !!</button>
             </div>
             <button id="fastButton" class="tabMenu"><i class="fas fa-tachometer-alt"></i>Fast Mode<i style="color:black" >1111</i></button>
             <div class="form" id="fastM" hidden=true>
@@ -54,12 +54,12 @@
                 sfsemlfkeqmlfkmelfkmlwfkemwlfkwmel
             </div>
         </div>
-        <!-- <div id="terminal"> </div> -->
+        <div id="terminal"hidden="true"> </div>
 
-        <!-- <form id="send-form">
+        <form id="send-form" hidden="true">
             <input id="input" type="text">
             <button type="submit">Send</button>
-        </form> -->
+        </form>
     </div>
     <script src="main.js"></script>
 

@@ -19,6 +19,35 @@ let workoutB = document.getElementById('workoutButton');
 let comboM = document.getElementById('comboM');
 let fastM = document.getElementById('fastM');
 let workoutM = document.getElementById('workoutM');
+//Combo form
+let comboValue = document.getElementById('comboValue').value;
+let rndTime = document.getElementById('rndTime');
+let rndNmb = document.getElementById('rndNb');
+let goCombo = document.getElementById('goCombo');
+// Initial Value for arduino
+let isSound = 0;
+let mode = 1;
+let timeBetween = 200;
+
+// Handle form submit event
+sendForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form sending
+  send(inputField.value); // Send text field contents
+  inputField.value = '';  // Zero text field
+  inputField.focus();     // Focus on text field
+});
+
+//Submit Combo form
+goCombo.addEventListener('click', function(event) {
+  const buffer = String(comboValue+','+rndTime.value +','+isSound+','+mode+''+rndNmb.value+','+timeBetween);
+  event.preventDefault(); // Prevent form sending
+  send(buffer); // Send text field contents
+  console.log("message send "+ buffer);
+  // comboValue.value = '';  // Zero text field
+  // rndNmb.value = '';  // Zero text field
+  // rndTime.value = '';  // Zero text field
+});
+
 // MEnu event
 comboB.addEventListener('click', function() {
   comboM.hidden =false;
@@ -45,13 +74,6 @@ disconnectButton.addEventListener('click', function() {
   disconnect();
 });
 
-// Handle form submit event
-sendForm.addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent form sending
-  send(inputField.value); // Send text field contents
-  inputField.value = '';  // Zero text field
-  inputField.focus();     // Focus on text field
-});
 
 // Launch Bluetooth device chooser and connect to the selected
 function connect() {
